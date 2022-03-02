@@ -1,8 +1,8 @@
 package com.minutemate.unitaapi.domain.account.controller;
 
-import com.minutemate.unitaapi.domain.account.data.AuthorizeIdentifier;
-import com.minutemate.unitaapi.domain.account.data.AuthorizeTarget;
-import com.minutemate.unitaapi.domain.account.data.AuthorizeToken;
+import com.minutemate.unitaapi.domain.account.data.identifier.AuthorizeIdentifier;
+import com.minutemate.unitaapi.domain.account.data.target.AuthorizeTarget;
+import com.minutemate.unitaapi.domain.account.data.token.AuthorizeToken;
 import org.springframework.http.ResponseEntity;
 
 public interface AuthorizeController
