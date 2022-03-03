@@ -2,6 +2,9 @@ server:
   address: localhost
   port: 8080
 spring:
+  redis:
+    host: localhost
+    port: 6379
   datasource:
     url: ${DATABASE_URL}
     username: ${DATABASE_USERNAME}

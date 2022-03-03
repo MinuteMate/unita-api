@@ -24,13 +24,13 @@ public class EmailAuthorizeService implements AuthorizeService<AuthorizeEmail, A
 
     @Override
     public void addIdentifier(AuthorizeNumber number, AuthorizeEmail email) {
-        if(authorizeNumberRepository.existsByAuthorizeNumber(number.getIdentifier())) throw new DuplicateKeyException("이미 매핑된 인증번호입니다! 인증번호 : " + number.getIdentifier());
+        if(authorizeNumberRepository.existsById(number.getIdentifier())) throw new DuplicateKeyException("이미 매핑된 인증번호입니다! 인증번호 : " + number.getIdentifier());
         authorizeNumberRepository.save(new AuthorizeNumberEntity(number.getIdentifier(), email));
     }
 
     @Override
     public AuthorizeEmail getEmailByIdentifier(AuthorizeNumber number) {
-        if(!authorizeNumberRepository.existsByAuthorizeNumber(number.getIdentifier())) throw new UnknownKeyException("알 수 없는 인증번호입니다! 인증번호 : " + number.getIdentifier());
+        if(!authorizeNumberRepository.existsById(number.getIdentifier())) throw new UnknownKeyException("알 수 없는 인증번호입니다! 인증번호 : " + number.getIdentifier());
         return authorizeNumberRepository.getByAuthorizeNumber(number.getIdentifier());
     }
 
@@ -38,7 +38,7 @@ public class EmailAuthorizeService implements AuthorizeService<AuthorizeEmail, A
         AuthorizeNumber number;
         do {
             number = authorizeNumberGenerator.generate();
-        } while (authorizeNumberRepository.existsByAuthorizeNumber(number.getIdentifier()));
+        } while (authorizeNumberRepository.existsById(number.getIdentifier()));
         return number;
     }
 }
