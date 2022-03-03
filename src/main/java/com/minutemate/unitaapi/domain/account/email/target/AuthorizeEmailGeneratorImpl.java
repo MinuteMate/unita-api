@@ -1,6 +1,5 @@
 package com.minutemate.unitaapi.domain.account.email.target;
 
-import com.minutemate.unitaapi.domain.account.email.AuthorizeEmailSender;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

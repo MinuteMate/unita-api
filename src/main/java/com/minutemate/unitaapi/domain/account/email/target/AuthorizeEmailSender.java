@@ -1,4 +1,4 @@
-package com.minutemate.unitaapi.domain.account.email;
+package com.minutemate.unitaapi.domain.account.email.target;
 
 import com.minutemate.unitaapi.domain.account.data.identifier.AuthorizeIdentifier;
 
