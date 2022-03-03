@@ -1,9 +1,11 @@
 package com.minutemate.unitaapi.domain.account.email.target;
 
-import com.minutemate.unitaapi.domain.account.data.identifier.AuthorizeNumber;
+import com.minutemate.unitaapi.domain.account.data.identifier.number.AuthorizeNumber;
 import com.minutemate.unitaapi.domain.account.data.target.AuthorizeTarget;
+import lombok.Getter;
 
 public class AuthorizeEmail implements AuthorizeTarget<AuthorizeNumber> {
+    @Getter
     private final String email;
     private final AuthorizeEmailSender sender;
 
