@@ -10,4 +10,8 @@ public class AuthorizeNumberGenerator {
         Random random = new Random();
         return new AuthorizeNumber(random.nextInt());
     }
+
+    public AuthorizeNumber of(Integer number) {
+        return new AuthorizeNumber(number);
+    }
 }
