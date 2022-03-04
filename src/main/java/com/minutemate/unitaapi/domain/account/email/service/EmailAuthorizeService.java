@@ -34,6 +34,11 @@ public class EmailAuthorizeService implements AuthorizeService<AuthorizeEmail, A
         return authorizeNumberRepository.getByAuthorizeNumber(number.getIdentifier());
     }
 
+    @Override
+    public void deleteIdentifier(AuthorizeNumber number) {
+        authorizeNumberRepository.deleteById(number.getIdentifier());
+    }
+
     private AuthorizeNumber generateWithoutDuplicate() {
         AuthorizeNumber number;
         do {

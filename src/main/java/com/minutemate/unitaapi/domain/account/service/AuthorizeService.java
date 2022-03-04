@@ -10,4 +10,6 @@ public interface AuthorizeService<T extends AuthorizeTarget, ID extends Authoriz
     void addIdentifier(ID identifier, T target);
 
     T getEmailByIdentifier(ID identifier);
+
+    void deleteIdentifier(ID number);
 }
