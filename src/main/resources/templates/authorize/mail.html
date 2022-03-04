@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title></title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+<div style="
+ align-items: center;
+ width: 700px;
+font-family: 'Noto Sans KR', sans-serif;">
+    <div style="
+         background-color: #4993FA;
+         width: 1100px;
+         height: 60px;">
+    </div>
+<div style="background-color: #eeeeee;
+width: 1100px;
+height: 750px;
+padding: 0px 200px;
+box-sizing: border-box;
+padding-top: 80px;">
+    <div style="background-color: white;
+height: 400px;
+width: 700px;
+align-items: center;
+border-radius: 10px;
+position: relative;">
+        <img style="height: 60px; width: 150px; position: relative; margin-left: 280px; margin-top: 20px;" src="https://i.ytimg.com/vi/i1KCK2ihvNw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzlqvOGCFWODia5nBxa0K6ureAxQ"></img>
+        <h1 style="margin: 0; position: relative; margin-top: 20px; margin-left: 290px; width: 150px;">인증번호</h1>
+        <p style="position: relative; margin-top: 20px; margin-left: 150px; width: 200px; text-align: center; position: relative; margin-left: 250px;">고객님의 인증 번호는 다음과 같습니다.</p>
+        <div style="margin-top: 50px;">
+            <strong style="
+            background-color: rgb(249, 249, 249);
+            border: 1px solid rgb(235, 235, 235);
+            padding: 10px 30px;
+            letter-spacing: 5px;
+            color: dimgray;
+            font-size: 30px;
+            position: relative;
+            margin-left: 260px;
+            width: 150px;"><span th:text="${authorize_identifier}"/>
+            </strong>
+        </div>
+    </div>
+
+</div>
+</div>
+</span>
+</body>
+</html>

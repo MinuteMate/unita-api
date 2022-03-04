@@ -20,3 +20,7 @@ spring:
         smtp:
           auth: true
           starttls.enable: true
+authorize:
+  email:
+    template-path: authorize/mail
+    title: "[미닛메이트] 인증메일이 도착했어요"
