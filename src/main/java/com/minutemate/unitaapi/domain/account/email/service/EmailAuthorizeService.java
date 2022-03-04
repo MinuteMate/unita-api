@@ -25,7 +25,7 @@ public class EmailAuthorizeService implements AuthorizeService<AuthorizeEmail, A
     @Override
     public void addIdentifier(AuthorizeNumber number, AuthorizeEmail email) {
         if(authorizeNumberRepository.existsById(number.getIdentifier())) throw new DuplicateKeyException("이미 매핑된 인증번호입니다! 인증번호 : " + number.getIdentifier());
-        authorizeNumberRepository.save(new AuthorizeNumberEntity(number.getIdentifier(), email));
+        authorizeNumberRepository.save(new AuthorizeNumberEntity(number.getIdentifier(), email.getEmail()));
     }
 
     @Override
