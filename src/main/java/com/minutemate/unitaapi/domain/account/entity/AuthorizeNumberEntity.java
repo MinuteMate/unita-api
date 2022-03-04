@@ -15,5 +15,5 @@ import org.springframework.data.redis.core.RedisHash;
 public class AuthorizeNumberEntity {
     @Id
     private String authorizeNumber;
-    private AuthorizeEmail email;
+    private String email;
 }
