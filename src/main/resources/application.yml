@@ -24,3 +24,6 @@ authorize:
   email:
     template-path: authorize/mail
     title: "[미닛메이트] 인증메일이 도착했어요"
+  jwt:
+    expired-seconds: 600
+    secret: ${AUTHORIZE_JWT_SECRET}
