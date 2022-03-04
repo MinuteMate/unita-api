@@ -18,7 +18,7 @@ public class HtmlAuthorizeEmailSender implements AuthorizeEmailSender{
     @Override
     public void send(String email, AuthorizeIdentifier identifier) {
         Map<String, Object> models = new HashMap<>();
-        models.put("authorize-identifier", identifier.getIdentifier());
+        models.put("authorize_identifier", identifier.getIdentifier());
         service.sendHtmlEmail(email, property.getTitle(), property.getTemplatePath(), models);
     }
 }
