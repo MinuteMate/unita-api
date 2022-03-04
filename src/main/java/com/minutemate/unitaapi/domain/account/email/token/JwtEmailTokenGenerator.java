@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class JwtEmailTokenGenerator implements EmailTokenGenerator {
-    private AuthorizeJwtTokenizer tokenizer;
+    private final AuthorizeJwtTokenizer tokenizer;
 
     @Override
     public EmailToken of(AuthorizeEmail email) {
