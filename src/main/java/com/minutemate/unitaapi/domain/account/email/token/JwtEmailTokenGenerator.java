@@ -1,13 +1,17 @@
 package com.minutemate.unitaapi.domain.account.email.token;
 
 import com.minutemate.unitaapi.domain.account.email.target.AuthorizeEmail;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class JwtEmailTokenGenerator implements EmailTokenGenerator {
+    private final AuthorizeJwtTokenizer tokenizer;
+
     @Override
     public EmailToken of(AuthorizeEmail email) {
-        String token = "tokenis" + email; //TODO JWT 를 통한 EmailToken 생성로직 작성
+        String token = tokenizer.emailToToken(email.getEmail());
         return new EmailToken(token);
     }
 }

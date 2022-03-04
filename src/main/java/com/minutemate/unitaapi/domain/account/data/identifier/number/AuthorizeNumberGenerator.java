@@ -8,7 +8,7 @@ import java.util.Random;
 public class AuthorizeNumberGenerator {
     public AuthorizeNumber generate() {
         Random random = new Random();
-        return new AuthorizeNumber(random.nextInt());
+        return new AuthorizeNumber(random.nextInt(100000));
     }
 
     public AuthorizeNumber of(Integer number) {

@@ -1,6 +1,5 @@
 package com.minutemate.unitaapi.domain.account.entity;
 
-import com.minutemate.unitaapi.domain.account.email.target.AuthorizeEmail;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
-@RedisHash("authorize-number")
+@RedisHash(value = "authorize-number", timeToLive = 300)
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor

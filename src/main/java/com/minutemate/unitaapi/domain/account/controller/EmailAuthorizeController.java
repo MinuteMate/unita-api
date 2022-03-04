@@ -12,6 +12,7 @@ import com.minutemate.unitaapi.domain.account.request.SendAuthorizeNumberRequest
 import com.minutemate.unitaapi.domain.account.service.AuthorizeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -41,9 +42,10 @@ public class EmailAuthorizeController implements Authorizer<AuthorizeNumber, Aut
         return ResponseEntity.ok().build();
     }
 
-    @Override
+    @Override @Transactional
     public ResponseEntity<AuthorizeToken> getAuthorizeTokenByAuthorizeNumber(AuthorizeNumber number) {
         AuthorizeEmail email = authorizeService.getEmailByIdentifier(number);
+        authorizeService.deleteIdentifier(number);
         EmailToken token = emailTokenGenerator.of(email);
         return ResponseEntity.ok(token);
     }
